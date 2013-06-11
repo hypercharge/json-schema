@@ -49,8 +49,9 @@ if ($validator->isValid()) {
 ## Running the tests
 
 There are two test groups:
+
 1. unit and integration tests provided by [json-schema](#)
-1. the testcases provided by [json-schema-test-suite](/json-schema/JSON-Schema-Test-Suite).
+1. the testcases provided by [json-schema-test-suite](/json-schema/JSON-Schema-Test-Suite)
 
 ### Unit and Integration Tests
 
