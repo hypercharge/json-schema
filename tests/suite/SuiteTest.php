@@ -3,9 +3,12 @@
  * Runs the JSON Schema Test Suite
  * testcases, JsonSchema-php is not compliant to, are marked as incomplete.
  *
- * TODO install test suite via composer!
- * Install JSON-Schema-Test-Suite git submodele:
- * $> git submodule update --init
+ * This test should not be included in general JsonSchema tests.
+ * run it if you develop against the json schema test suite:
+ *
+ * ./vendor/bin/phpunit tests/suite/SuiteTest.php
+ *
+ * Rquires test suite installed via composer.
  * @author Jan Mentzel <jan@hypercharge.net>
  */
 class SuiteTest extends \PHPUnit_Framework_TestCase {
