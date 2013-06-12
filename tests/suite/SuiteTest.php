@@ -51,6 +51,7 @@ class SuiteTest extends \PHPUnit_Framework_TestCase {
 		foreach($paths as $path) {
 			//echo "\npath: $path\n";
 			foreach (glob($path.'/*.json') as $file) {
+				$filename = basename($file);
 				//echo "\nfile: $file\n";
 				$suites = json_decode(file_get_contents($file));
 				foreach($suites as $suite) {
@@ -64,6 +65,7 @@ class SuiteTest extends \PHPUnit_Framework_TestCase {
 						$test->suite = new stdClass();
 						$test->suite->description = $suite->description;
 						$test->suite->schema      = $suite->schema;
+						$test->suite->filename    = $filename;
 						array_push($tests, array($test));
 					}
 				}
@@ -88,7 +90,7 @@ class SuiteTest extends \PHPUnit_Framework_TestCase {
 	 		if(self::$verbose) {
 	 			echo "\n"; print_r($test);
 	 		}
-	 		$this->setName($test->suite->description.': '.($test->valid?'valid':'not valid').' : '.$test->description.' |');
+	 		$this->setName(' in '. $test->suite->filename.' '. $test->suite->description.' : '.($test->valid?'valid':'not valid').' : '.$test->description.' |');
 			$validator = new \JsonSchema\Validator();
 
 			// resolve http:// or file:// $ref and extends
