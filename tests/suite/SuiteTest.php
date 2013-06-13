@@ -94,10 +94,10 @@ class SuiteTest extends \PHPUnit_Framework_TestCase {
 			$validator = new \JsonSchema\Validator();
 
 			// resolve http:// or file:// $ref and extends
-			$refResolver = new \JsonSchema\RefResolver();
+			//$refResolver = new \JsonSchema\RefResolver();
 			try {
 
-				$refResolver->resolve($test->suite->schema);
+				//$refResolver->resolve($test->suite->schema);
 
 				// echo "\nresolved schema: ";
 				// print_r($test->suite->schema);
